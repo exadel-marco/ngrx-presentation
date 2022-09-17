@@ -24,10 +24,13 @@ export const initialAuthState: AuthState = {
 export const authReducer = createReducer(
   initialAuthState,
   on(AuthActions.login, (state, action) => {
-    // console.log("🚀 ~ file: index.ts ~ line 27 ~ on ~ state, action", state, action);
-    // debugger;
     return {
       user:action.user
+    }
+  }),
+  on(AuthActions.logout, (state, action) => {
+    return {
+      user:undefined
     }
   })
 );
